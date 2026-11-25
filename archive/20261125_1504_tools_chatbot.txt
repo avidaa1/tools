@@ -1,0 +1,432 @@
+Archived (removed from the live page) by the chatbot audit 20261125_1504.
+Original file: index.html
+
+/* ===== AI Key section (key input) (bytes 733) ===== */
+  <h2>AI Key</h2>
+  <div class="rig">
+    <p class="lead">AI-assist buttons call the Anthropic API directly from your browser with your own key. The key is
+    stored only in this browser's local storage and is never sent anywhere except <code>api.anthropic.com</code>.
+    No key ships with this page, and none is ever hardcoded.</p>
+    <div class="row">
+      <input id="ai-key-in" type="password" placeholder="sk-ant-..." style="flex:1;min-width:200px;" autocomplete="off">
+      <button class="bt" onclick="aiSetKey()">Save Key</button>
+      <button class="bt dg" onclick="aiClearKey()">Clear</button>
+      <span class="pill hz" id="ai-key-state">NO KEY</span>
+    </div>
+    <div class="out" id="ai-key-out"></div>
+  </div>
+
+
+
+/* ===== replaced: ai coverage text ===== */
+the chatbot,
+  the 16 AI-assist buttons, and this dashboard.
+
+/* AI button for abAI */
+<button class="bt alt" onclick="abAI()">AI: real-world example</button>
+
+/* AI function abAI */
+
+function abAI(){
+  var out=(document.getElementById('ab-out')||{}).textContent||'';
+  if(!out){setOut('ab-out','Pick two elements first.','err');return;}
+  aiCall('In 2 short lines, plain language, explain one real-world example or use of this bonding result.\n'+out,'ab-out');
+}
+
+
+/* AI button for bmAI */
+      <button class="bt alt" onclick="bmAI()">AI: suggest a pattern</button>
+
+
+/* AI function bmAI */
+
+function bmAI(){
+  aiCall('Suggest a simple 16-step kick/snare/hat pattern (as three short binary-like strings of 16 characters, '+
+    'x or dot) for a basic four-on-the-floor house beat. Keep it under 5 lines total.','bm-ai-out');
+}
+
+
+/* AI button for brAI */
+      <button class="bt alt" onclick="brAI()">AI: what is this for?</button>
+
+/* AI function brAI */
+
+function brAI(){
+  var s=(document.getElementById('br-out')||{}).textContent||'';
+  if(!s){setOut('br-out','Convert some text first.','err');return;}
+  aiCall('In one short line, confirm what Grade-1 English Braille is used for and one real accessibility use case. '+
+    'Do not restate the cells.','br-out');
+}
+
+
+/* AI button for cbAI */
+      <button class="bt alt" onclick="cbAI()">AI: how they work together</button>
+
+
+/* AI function cbAI */
+
+function cbAI(){
+  var sel=Object.keys(cbSelected).filter(function(k){return cbSelected[k];});
+  if(!sel.length){setOut('cb-out','Add an organelle first.','err');return;}
+  aiCall('In 2 short lines, explain how these organelles work together in a cell: '+sel.join(', ')+'.','cb-out');
+}
+
+
+/* AI button for ccAI */
+      <button class="bt alt" onclick="ccAI()">AI: describe this reading</button>
+
+
+/* AI function ccAI */
+
+function ccAI(){
+  var out=(document.getElementById('cc-out')||{}).textContent||'';
+  if(!out){setOut('cc-out','Convert an amount first.','err');return;}
+  aiCall('In 2 short neutral lines, describe this currency conversion result. No forecasts, no trading advice.\n'+out,'cc-out');
+}
+
+
+/* AI button for cgAI */
+<button class="bt alt" onclick="cgAI()">AI: explain in plain terms</button>
+
+/* AI function cgAI */
+
+function cgAI(){
+  var out=(document.getElementById('cg-out')||{}).textContent||'';
+  aiCall('Explain this compound-growth result in 2 plain-language lines a non-finance person would understand. '+
+    'Do not give investment advice.\n'+out,'cg-out');
+}
+
+
+/* AI button for clAI */
+        <button class="bt alt" style="margin-top:8px;" onclick="clAI()">AI: suggest a palette</button>
+
+/* AI function clAI */
+
+function clAI(){
+  var a=document.getElementById('cl-a').value,b=document.getElementById('cl-b').value;
+  aiCall('Given base colours '+a+' and '+b+', suggest 2 complementary hex colours for a small palette, one line '+
+    'each with the hex code and a one-word mood.','cl-out');
+}
+
+
+/* AI button for cpAI */
+      <button class="bt alt" onclick="cpAI()">AI: what is this?</button>
+
+
+/* AI function cpAI */
+
+function cpAI(){
+  var s=document.getElementById('cp-in').value,o=(document.getElementById('cp-out')||{}).textContent||'';
+  if(!s){setOut('cp-out','Enter text first.','err');return;}
+  aiCall('You are a terse cryptanalysis assistant on an offline tools bench. Given this cipher input and its '+
+    'processed output, in 2-3 short lines say what cipher family it resembles and one useful observation. Do not '+
+    'invent a plaintext you cannot derive.\nInput: '+s+'\nProcessed output: '+o,'cp-out');
+}
+
+
+/* AI button for crAI */
+<button class="bt alt" onclick="crAI()">AI: describe this reading</button>
+
+/* AI function crAI */
+
+function crAI(){
+  var out=(document.getElementById('cr-out')||{}).textContent||'';
+  if(!out){setOut('cr-out','Convert an amount first.','err');return;}
+  aiCall('In 2 short neutral lines, describe this crypto conversion reading. No trading advice, no predictions.\n'+out,'cr-out');
+}
+
+
+/* AI button for ctAI */
+      <button class="bt alt" onclick="ctAI()">AI: one more fact</button>
+
+/* AI function ctAI */
+
+function ctAI(){
+  var q=document.getElementById('ct-q').value.trim();
+  if(!q){setOut('ct-out','Search a country first.','err');return;}
+  aiCall('In 2 short factual lines, give a neutral geography fact about "'+q+'" not already implied by capital, '+
+    'region, or currency (e.g. terrain, notable neighbor, or founding era). No political commentary.','ct-out');
+}
+
+
+/* AI button for cuAI */
+      <button class="bt alt" onclick="cuAI()">AI: why base 60?</button>
+
+
+/* AI function cuAI */
+
+function cuAI(){
+  var out=(document.getElementById('cu-out')||{}).textContent||'';
+  if(!out){setOut('cu-out','Render a number first.','err');return;}
+  aiCall('In 2 short lines, explain why the Old Babylonian sexagesimal (base-60) system is still visible in modern '+
+    'life today (hint: time and angles). Do not repeat the digit breakdown.\n'+out,'cu-out');
+}
+
+
+/* AI button for dfAI */
+      <button class="bt alt" onclick="dfAI()">AI: summarize the change</button>
+
+
+/* AI function dfAI */
+
+function dfAI(){
+  var a=document.getElementById('df-a').value,b=document.getElementById('df-b').value;
+  aiCall('Summarize in 2 short lines, plain language, what changed between these two texts.\nLEFT:\n'+
+    a.slice(0,700)+'\nRIGHT:\n'+b.slice(0,700),'df-out');
+}
+
+
+/* AI button for dnaAI */
+      <button class="bt alt" onclick="dnaAI()">AI: why GC content matters</button>
+
+
+/* AI function dnaAI */
+
+function dnaAI(){
+  var out=(document.getElementById('dna-out')||{}).textContent||'';
+  if(!out){setOut('dna-out','Build a sequence first.','err');return;}
+  aiCall('In 2 short lines, explain one real use of knowing a DNA sequence\u0027s GC content.','dna-out');
+}
+
+
+/* AI button for egAI */
+      <button class="bt alt" onclick="egAI()">AI: real-world example</button>
+
+
+/* AI function egAI */
+
+function egAI(){
+  aiCall('In one short line, name one real Egyptian monument or papyrus where hieroglyphic numerals like these '+
+    'have been documented by Egyptologists.','eg-out');
+}
+
+
+/* AI button for hnAI */
+      <button class="bt alt" onclick="hnAI()">AI: explain the mapping</button>
+
+
+/* AI function hnAI */
+
+function hnAI(){
+  var s=(document.getElementById('hn-in').value||'');
+  if(!s){setOut('hn-out','Enter a name first.','err');return;}
+  aiCall('In 2 short lines, plain language, explain that this is a simplified consonant-only novelty transliteration '+
+    'of the name "'+s.replace(/[^a-zA-Z]/g,'')+'", not scholarly Middle Egyptian, and give one real fact about how '+
+    'ancient Egyptian scribes actually wrote foreign names.','hn-out');
+}
+
+
+/* AI button for hsAI */
+      <button class="bt alt" onclick="hsAI()">AI: explain this digest</button>
+
+
+/* AI function hsAI */
+
+function hsAI(){
+  var alg=document.getElementById('hs-alg').value,h=(document.getElementById('hs-out')||{}).textContent||'';
+  aiCall('In 3 short lines, plain language, explain what a '+alg+' digest guarantees and one real use case. '+
+    'Do not repeat the raw hex.\nDigest computed: '+h.split('\n')[0],'hs-out');
+}
+
+
+/* AI button for irAI */
+<button class="bt alt" onclick="irAI()">AI: name this mood</button>
+
+/* AI function irAI */
+
+function irAI(){
+  var r=rack();
+  aiCall('A synth voice is set to waveform '+r.v+', attack '+r.a+'s, release '+r.r+'s, filter '+r.f+'Hz. In one '+
+    'short line, name the mood/genre this suggests.','ir-ai-out');
+}
+
+
+/* AI button for jsAI */
+      <button class="bt alt" onclick="jsAI()">AI: describe this shape</button>
+
+
+/* AI function jsAI */
+
+function jsAI(){
+  var s=document.getElementById('js-in').value;
+  aiCall('In 2-3 short lines, describe what this JSON structure most likely represents and flag anything unusual '+
+    'about its shape. Do not restate every field.\n\n'+s.slice(0,1200),'js-out');
+}
+
+
+/* AI button for mkAI */
+      <button class="bt alt" onclick="mkAI()">AI: describe the reading</button>
+
+
+/* AI function mkAI */
+
+function mkAI(){
+  var out=(document.getElementById('mk-out')||{}).textContent||'';
+  var tbl=(document.getElementById('mk-tbl')||{}).innerText||'';
+  aiCall('Given this just-fetched price table, write 2 short neutral lines describing the reading. No trading '+
+    'advice, no predictions.\n'+tbl,'mk-out');
+}
+
+
+/* AI button for pnAI */
+      <button class="bt alt" onclick="pnAI()">AI: suggest a progression</button>
+
+
+/* AI function pnAI */
+
+function pnAI(){
+  aiCall('Suggest a short 4-chord progression (roman numerals, one key) good for a 2-octave browser piano demo. '+
+    '2 lines max: the key and the progression.','pn-ai-out');
+}
+
+
+/* AI button for psAI */
+<button class="bt alt" onclick="psAI()">AI: explain in plain terms</button>
+
+/* AI function psAI */
+
+function psAI(){
+  var out=(document.getElementById('ps-out')||{}).textContent||'';
+  aiCall('Explain this position-sizing arithmetic in 2 plain lines. Explicitly note it is arithmetic, not advice.\n'+out,'ps-out');
+}
+
+
+/* AI button for ptAI */
+      <button class="bt alt" onclick="ptAI()">AI: about folding</button>
+
+
+/* AI function ptAI */
+
+function ptAI(){
+  var out=(document.getElementById('pt-out')||{}).textContent||'';
+  if(!out){setOut('pt-out','Build a chain first.','err');return;}
+  aiCall('In 2 short lines, explain what determines this chain\u0027s final 3D shape once it folds into a protein.','pt-out');
+}
+
+
+/* AI button for pwAI */
+<button class="bt alt" onclick="pwAI()">AI: storage tip</button>
+
+/* AI function pwAI */
+
+function pwAI(){
+  var pw=(document.getElementById('pw-out')||{}).textContent||'';
+  if(!pw){setOut('pw-out','Generate a password first.','err');return;}
+  aiCall('This password was just generated locally: "'+pw+'". Do not repeat it back. In 2 short lines, give one '+
+    'plain-language storage tip (e.g. password manager) appropriate to its strength. No security-through-obscurity advice.','pw-out');
+}
+
+
+/* AI button for rxAI */
+      <button class="bt alt" onclick="rxAI()">AI: write the regex</button>
+
+
+/* AI function rxAI */
+
+function rxAI(){
+  var d=document.getElementById('rx-desc')?document.getElementById('rx-desc').value:'';
+  if(!d){setOut('rx-out','Describe the pattern you want in the field above first.','err');return;}
+  aiCall('Write one JavaScript-compatible regular expression (no explanation, just the pattern with no slashes) '+
+    'for this description: '+d,'rx-out');
+}
+
+
+/* AI button for taAI */
+<button class="bt alt" onclick="taAI()">AI: one line of feedback</button>
+
+/* AI function taAI */
+
+function taAI(){
+  var s=document.getElementById('ta-in').value;
+  if(!s.trim()){setOut('ta-out','Enter text first.','err');return;}
+  aiCall('Give one short, concrete line of feedback to make this text clearer or more concise. Do not rewrite the '+
+    'whole thing, just the one suggestion.\n\n'+s.slice(0,1200),'ta-ai-out');
+}
+
+
+/* AI button for vtAI */
+          <button class="bt alt" onclick="vtAI()">AI: what does this protect?</button>
+
+
+/* AI function vtAI */
+
+function vtAI(){
+  aiCall('In 3 short lines, explain what AES-256-GCM with PBKDF2 at 250,000 iterations protects against and what '+
+    'it does not protect against (e.g. a weak passphrase, a compromised device). No specifics about this note.','vt-out');
+}
+
+
+/* AI button for wvAI */
+<button class="bt alt" onclick="wvAI()">AI: describe the sound</button>
+
+/* AI function wvAI */
+
+function wvAI(){
+  var out=(document.getElementById('wv-out')||{}).textContent||'';
+  aiCall('In one short line, describe what this frequency and note would sound like to a listener.\n'+out,'wv-out');
+}
+
+
+/* ===== AI core (key storage + api.anthropic.com fetch) (bytes 2133) ===== */
+/* ---------------- AI core (visitor-supplied key, direct to Anthropic API) ---------------- */
+var AI_KEY='avidaa_anthropic_key';
+function aiKey(){try{return localStorage.getItem(AI_KEY)||'';}catch(e){return '';}}
+function aiKeyState(){
+  var e=document.getElementById('ai-key-state');
+  if(e)e.textContent=aiKey()?'KEY SET':'NO KEY';
+}
+function aiSetKey(){
+  var k=(document.getElementById('ai-key-in')||{}).value||'';
+  k=k.trim();
+  if(!k){setOut('ai-key-out','Paste a key first.','err');return;}
+  try{localStorage.setItem(AI_KEY,k);}catch(e){setOut('ai-key-out','Local storage blocked.','err');return;}
+  document.getElementById('ai-key-in').value='';
+  setOut('ai-key-out','Key stored in this browser only. Never sent anywhere but api.anthropic.com.');
+  aiKeyState();
+}
+function aiClearKey(){
+  try{localStorage.removeItem(AI_KEY);}catch(e){}
+  setOut('ai-key-out','Key cleared.','warn');
+  aiKeyState();
+}
+function aiCall(prompt,outId,btnId){
+  var k=aiKey();
+  var btn=btnId?document.getElementById(btnId):null;
+  if(!k){
+    setOut(outId,'No AI key set. Open Bench > AI Key, paste your own Anthropic API key (stored only in this '+
+      'browser, sent only to api.anthropic.com), then try again.','warn');
+    return;
+  }
+  if(btn)btn.disabled=true;
+  setOut(outId,'contacting AI...','warn');
+  fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{
+      'content-type':'application/json',
+      'x-api-key':k,
+      'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true'
+    },
+    body:JSON.stringify({model:'claude-sonnet-5',max_tokens:400,messages:[{role:'user',content:prompt}]})
+  }).then(function(r){
+    if(!r.ok)return r.text().then(function(t){throw new Error('HTTP '+r.status+' '+t.slice(0,160));});
+    return r.json();
+  }).then(function(d){
+    var txt=(d.content||[]).filter(function(b){return b.type==='text';}).map(function(b){return b.text;}).join('\n').trim();
+    setOut(outId,txt||'AI returned no text.');
+  }).catch(function(e){
+    setOut(outId,'AI call failed: '+e.message,'err');
+  }).then(function(){if(btn)btn.disabled=false;});
+}
+
+
+/* ===== replaced: aiKeyState call ===== */
+  aiKeyState();
+
+
+/* ===== replaced: AI_FEATURES ===== */
+  'Offline AVIDAA chatbot (intent engine, no API)',
+
+
+/* ===== replaced: selftest ===== */
+chk('AI features declared',AI_FEATURES.length,5);
