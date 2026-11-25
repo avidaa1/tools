@@ -259,20 +259,20 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= BENCH ================= -->
 <div class="page on" id="page-desk">
-  <h1>THE BENCH</h1>
+  <h1 id="s-the-bench">THE BENCH</h1>
   <p class="lead">Every AVIDAA utility on one machined surface. Nothing here calls home. No accounts, no keys, no
   telemetry &mdash; every instrument below runs offline in your own browser. Knowledge made clear, for humans and AI. Est.2025.</p>
   <div id="gs-out"></div>
 
-  <h2>AI Coverage</h2>
+  <h2 id="s-ai-coverage">AI Coverage</h2>
   <p class="lead">"AI" appears <span class="rd" id="ai-mention-count">0</span> times on this page &mdash; and this dashboard. Every number below is computed live from the tool registry, not typed in by hand.</p>
   <div class="grid3" id="stats-grid"></div>
 
-  <h2>Instrument Registry</h2>
+  <h2 id="s-instrument-registry">Instrument Registry</h2>
   <p class="lead mono" id="reg-count"></p>
   <div class="grid3" id="reg-grid"></div>
 
-  <h2>Bench Rules</h2>
+  <h2 id="s-bench-rules">Bench Rules</h2>
   <div class="rig">
     <table>
       <tr><th>Rule</th><th>Meaning</th></tr>
@@ -286,10 +286,10 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= CRYPTO ================= -->
 <div class="page" id="page-crypto">
-  <h1>CRYPTO BENCH</h1>
+  <h1 id="s-crypto-bench">CRYPTO BENCH</h1>
   <p class="lead">Cipher work, hashing, key generation, and an encrypted local vault. WebCrypto only &mdash; no libraries, no uploads.</p>
 
-  <h2>Cipher Tool</h2>
+  <h2 id="s-cipher-tool">Cipher Tool</h2>
   <div class="rig">
     <div class="grid">
       <div>
@@ -318,7 +318,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <p class="lead mono" style="font-size:.7rem;">Caesar: c = (p + k) mod 26 &middot; Atbash: c = 25 - p &middot; XOR: c[i] = p[i] ^ k[i mod len]</p>
   </div>
 
-  <h2>Hash Generator</h2>
+  <h2 id="s-hash-generator">Hash Generator</h2>
   <div class="rig">
     <label class="lb">Input</label>
     <textarea id="hs-in" placeholder="text to digest" style="min-height:80px;"></textarea>
@@ -376,10 +376,10 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= SOUND ================= -->
 <div class="page" id="page-sound">
-  <h1>SOUND LAB</h1>
+  <h1 id="s-sound-lab">SOUND LAB</h1>
   <p class="lead">Web Audio synthesis. One shared audio context, started on your first click &mdash; nothing plays unprompted.</p>
 
-  <h2>Piano &mdash; 2 Octaves</h2>
+  <h2 id="s-piano-2-octaves">Piano &mdash; 2 Octaves</h2>
   <div class="rig">
     <div class="row">
       <button class="bt alt" onclick="pnOct(-1)">Octave &minus;</button>
@@ -392,7 +392,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <p class="lead mono" style="font-size:.7rem;">f = 440 &times; 2^((n &minus; 69)/12) &middot; keyboard row A S D F G H J K works too</p>
   </div>
 
-  <h2>Instrument Rack</h2>
+  <h2 id="s-instrument-rack">Instrument Rack</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">Voice</label>
@@ -410,7 +410,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <p class="lead mono" style="font-size:.7rem;">Rack settings feed the Piano and the Beat Machine live.</p>
   </div>
 
-  <h2>Beat Machine</h2>
+  <h2 id="s-beat-machine">Beat Machine</h2>
   <div class="rig">
     <div class="row">
       <button class="bt" id="bm-play" onclick="bmToggle()">Play</button>
@@ -422,7 +422,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <p class="lead mono" style="font-size:.7rem;">Step duration = 60 / BPM / 4 seconds. Scheduler is lookahead-based, so tempo stays true under load.</p>
   </div>
 
-  <h2>Metronome</h2>
+  <h2 id="s-metronome">Metronome</h2>
   <div class="rig">
     <div class="row">
       <button class="bt" id="mt-btn" onclick="mtToggle()">Start</button>
@@ -435,10 +435,10 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= CONVERT ================= -->
 <div class="page" id="page-convert">
-  <h1>CONVERTERS</h1>
+  <h1 id="s-converters">CONVERTERS</h1>
   <p class="lead">Exact factors, printed. Nothing rounded before it reaches you.</p>
 
-  <h2>Unit Converter</h2>
+  <h2 id="s-unit-converter">Unit Converter</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">Family</label><select id="uc-fam" onchange="ucFam()"></select></div>
@@ -451,7 +451,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="uc-out"></div>
   </div>
 
-  <h2>Number Base Converter</h2>
+  <h2 id="s-number-base-converter">Number Base Converter</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">Value</label><input id="nb-in" value="255" oninput="nbRun()"></div>
@@ -461,7 +461,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="nb-out"></div>
   </div>
 
-  <h2>Colour Tool</h2>
+  <h2 id="s-colour-tool">Colour Tool</h2>
   <div class="rig">
     <div class="grid">
       <div>
@@ -474,7 +474,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <p class="lead mono" style="font-size:.7rem;">Contrast = (L1 + 0.05) / (L2 + 0.05) using WCAG relative luminance.</p>
   </div>
 
-  <h2>Encode / Decode</h2>
+  <h2 id="s-encode-decode">Encode / Decode</h2>
   <div class="rig">
     <label class="lb">Input</label><textarea id="ed-in" style="min-height:80px;"></textarea>
     <div class="row" style="margin-top:8px;">
@@ -489,7 +489,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="ed-out"></div>
   </div>
 
-  <h2>Braille Converter</h2>
+  <h2 id="s-braille-converter">Braille Converter</h2>
   <div class="rig">
     <p class="lead">Grade-1 (uncontracted) English Braille, rendered as real Unicode Braille Patterns plus an SVG
     dot-grid for every cell. Encode a-z, 0-9, space, period, comma; decode any Braille Unicode text back to English.</p>
@@ -505,7 +505,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="br-dec-out"></div>
   </div>
 
-  <h2>Sumero-Babylonian Cuneiform Numerals</h2>
+  <h2 id="s-sumero-babylonian-cuneiform-numerals">Sumero-Babylonian Cuneiform Numerals</h2>
   <div class="rig">
     <p class="lead">Stylized rendering of the Old Babylonian sexagesimal (base-60) positional numeral system: a
     unit wedge repeated up to 9 times, a ten-corner (Winkelhaken) repeated up to 5 times, per digit position.
@@ -518,7 +518,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="cu-out"></div>
   </div>
 
-  <h2>Egyptian Hieroglyphic Numerals</h2>
+  <h2 id="s-egyptian-hieroglyphic-numerals">Egyptian Hieroglyphic Numerals</h2>
   <div class="rig">
     <p class="lead">The seven standard Egyptological numeral signs: stroke (1), heel bone (10), coiled rope (100),
     lotus (1,000), bent finger (10,000), tadpole (100,000), Heh the kneeling figure with raised arms (1,000,000).
@@ -531,7 +531,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="eg-out"></div>
   </div>
 
-  <h2>Name in Hieroglyphs</h2>
+  <h2 id="s-name-in-hieroglyphs">Name in Hieroglyphs</h2>
   <div class="rig">
     <p class="lead">A simplified consonant-only novelty transliteration - the same kind of mapping used by common
     name-cartouche novelties, not scholarly Middle Egyptian. Egyptian writing does not mark vowels the way English
@@ -544,7 +544,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="hn-out"></div>
   </div>
 
-  <h2>Currency Converter</h2>
+  <h2 id="s-currency-converter">Currency Converter</h2>
   <div class="rig">
     <p class="lead">Live ECB reference rates from frankfurter.app - keyless, no account. Currency list is fetched on
     load; if that fails, a 4-currency offline fallback stays available.</p>
@@ -559,7 +559,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="cc-out"></div>
   </div>
 
-  <h2>Crypto Converter</h2>
+  <h2 id="s-crypto-converter">Crypto Converter</h2>
   <div class="rig">
     <p class="lead">Live price via CoinGecko - keyless. Converts either direction, coin to fiat or fiat to coin.</p>
     <div class="grid3">
@@ -578,7 +578,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="cr-out"></div>
   </div>
 
-  <h2>World Clock</h2>
+  <h2 id="s-world-clock">World Clock</h2>
   <div class="rig">
     <p class="lead">Sixteen zones, live, updated every second. Pure <code>Intl.DateTimeFormat</code> - no network.</p>
     <div class="grid3" id="wc-grid"></div>
@@ -587,10 +587,10 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= TEXT ================= -->
 <div class="page" id="page-text">
-  <h1>TEXT ENGINES</h1>
+  <h1 id="s-text-engines">TEXT ENGINES</h1>
   <p class="lead">Counting, reshaping, comparing, and testing text. All local.</p>
 
-  <h2>Text Analyzer</h2>
+  <h2 id="s-text-analyzer">Text Analyzer</h2>
   <div class="rig">
     <label class="lb">Text</label><textarea id="ta-in" oninput="taRun()" placeholder="paste text"></textarea>
     <div class="row" style="margin-top:8px;"></div>
@@ -599,7 +599,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <p class="lead mono" style="font-size:.7rem;">Flesch reading ease = 206.835 &minus; 1.015(words/sentence) &minus; 84.6(syllables/word)</p>
   </div>
 
-  <h2>Case &amp; Line Tools</h2>
+  <h2 id="s-case-line-tools">Case &amp; Line Tools</h2>
   <div class="rig">
     <label class="lb">Input</label><textarea id="ln-in"></textarea>
     <div class="row" style="margin-top:8px;">
@@ -615,7 +615,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="ln-out"></div>
   </div>
 
-  <h2>Regex Tester</h2>
+  <h2 id="s-regex-tester">Regex Tester</h2>
   <div class="rig">
     <label class="lb">Describe the pattern (optional, for AI generation)</label>
     <div class="row">
@@ -630,7 +630,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="rx-out"></div>
   </div>
 
-  <h2>JSON Formatter</h2>
+  <h2 id="s-json-formatter">JSON Formatter</h2>
   <div class="rig">
     <label class="lb">JSON</label><textarea id="js-in" placeholder='{"a":1,"b":[2,3]}'></textarea>
     <div class="row" style="margin-top:8px;">
@@ -641,7 +641,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="js-out"></div>
   </div>
 
-  <h2>Diff Checker</h2>
+  <h2 id="s-diff-checker">Diff Checker</h2>
   <div class="rig">
     <div class="grid">
       <div><label class="lb">Left</label><textarea id="df-a"></textarea></div>
@@ -656,10 +656,10 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= MATH ================= -->
 <div class="page" id="page-math">
-  <h1>CALCULATORS</h1>
+  <h1 id="s-calculators">CALCULATORS</h1>
   <p class="lead">Formula printed beside every readout, so the number can always be checked by hand.</p>
 
-  <h2>Percentage Bench</h2>
+  <h2 id="s-percentage-bench">Percentage Bench</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">A</label><input id="pc-a" value="250" oninput="pcRun()"></div>
@@ -669,7 +669,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="pc-out"></div>
   </div>
 
-  <h2>Compound Growth</h2>
+  <h2 id="s-compound-growth">Compound Growth</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">Principal</label><input id="cg-p" value="1000" oninput="cgRun()"></div>
@@ -685,7 +685,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <p class="lead mono" style="font-size:.7rem;">FV = P(1+r)^n + C[((1+r)^n &minus; 1)/r] &middot; result is arithmetic only, not financial advice</p>
   </div>
 
-  <h2>Date Calculator</h2>
+  <h2 id="s-date-calculator">Date Calculator</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">Date A</label><input id="dt-a" type="date"></div>
@@ -696,7 +696,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="dt-out"></div>
   </div>
 
-  <h2>Randomiser</h2>
+  <h2 id="s-randomiser">Randomiser</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">Min</label><input id="rn-min" value="1"></div>
@@ -713,7 +713,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <p class="lead mono" style="font-size:.7rem;">Rejection sampling on crypto.getRandomValues &mdash; no modulo bias.</p>
   </div>
 
-  <h2>Stopwatch</h2>
+  <h2 id="s-stopwatch">Stopwatch</h2>
   <div class="rig">
     <div class="row">
       <button class="bt" id="sw-btn" onclick="swToggle()">Start</button>
@@ -727,11 +727,11 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= PHYSICS ================= -->
 <div class="page" id="page-physics">
-  <h1>PHYSICS EXPLORERS</h1>
+  <h1 id="s-physics-explorers">PHYSICS EXPLORERS</h1>
   <p class="lead">Public scaling laws applied to published figures. Educational modelling only &mdash; no design or engineering
   detail of any kind, and no build guidance.</p>
 
-  <h2>Nuclear Yield &amp; Blast Explorer</h2>
+  <h2 id="s-nuclear-yield-blast-explorer">Nuclear Yield &amp; Blast Explorer</h2>
   <div class="rig">
     <label class="lb">Yield <span class="mono" id="nk-yl">15 kt</span></label>
     <input id="nk-y" type="range" min="0" max="1000" value="150" oninput="nkRun()">
@@ -741,7 +741,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     50,000 kt Tsar Bomba.</p>
   </div>
 
-  <h2>Projectile &amp; Free Fall</h2>
+  <h2 id="s-projectile-free-fall">Projectile &amp; Free Fall</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">Speed m/s</label><input id="pj-v" value="30" oninput="pjRun()"></div>
@@ -752,7 +752,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <p class="lead mono" style="font-size:.7rem;">Vacuum model: R = v&sup2;sin(2&theta;)/g &middot; h = v&sup2;sin&sup2;&theta;/2g &middot; t = 2v&nbsp;sin&theta;/g</p>
   </div>
 
-  <h2>Wave &amp; Frequency</h2>
+  <h2 id="s-wave-frequency">Wave &amp; Frequency</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">Frequency Hz</label><input id="wv-f" value="440" oninput="wvRun()"></div>
@@ -767,7 +767,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= MARKET ================= -->
 <div class="page" id="page-market">
-  <h1>MARKET READOUT</h1>
+  <h1 id="s-market-readout">MARKET READOUT</h1>
   <p class="lead">The one tool on this bench that reaches the network. Keyless public endpoint, fetched only when you press
   the button, and it fails silent if blocked. Nothing here is advice &mdash; it is a price, nothing more.</p>
   <div class="rig">
@@ -779,7 +779,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out warn" id="mk-out">No request made yet. Nothing has left this page.</div>
   </div>
 
-  <h2>Position Sizer</h2>
+  <h2 id="s-position-sizer">Position Sizer</h2>
   <div class="rig">
     <div class="grid3">
       <div><label class="lb">Account</label><input id="ps-acc" value="10000" oninput="psRun()"></div>
@@ -794,10 +794,10 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= PLAY ================= -->
 <div class="page" id="page-play">
-  <h1>ARCADE</h1>
+  <h1 id="s-arcade">ARCADE</h1>
   <p class="lead">Two small instruments for the hands and the memory.</p>
 
-  <h2>Reaction Timer</h2>
+  <h2 id="s-reaction-timer">Reaction Timer</h2>
   <div class="rig">
     <div class="row">
       <button class="bt" id="rt-btn" onclick="rtClick()">Arm</button>
@@ -806,7 +806,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="rt-out">Press Arm, wait for the panel to go live, then press again.</div>
   </div>
 
-  <h2>Memory Grid</h2>
+  <h2 id="s-memory-grid">Memory Grid</h2>
   <div class="rig">
     <div class="row">
       <button class="bt" onclick="mgStart()">New Sequence</button>
@@ -819,11 +819,11 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= LOOKUP ================= -->
 <div class="page" id="page-lookup">
-  <h1>LOOKUP</h1>
+  <h1 id="s-lookup">LOOKUP</h1>
   <p class="lead">Two offline reference datasets, pulled from maintained public sources and embedded whole - no
   network needed to search either one.</p>
 
-  <h2>Country Searcher</h2>
+  <h2 id="s-country-searcher">Country Searcher</h2>
   <div class="rig">
     <label class="lb">Search (name, region, or ISO2/3 code)</label>
     <div class="row"><input id="ct-q" placeholder="e.g. japan, europe, JP" oninput="ctRun()" style="flex:1;min-width:180px;">
@@ -833,7 +833,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="ct-out"></div>
   </div>
 
-  <h2>Area Code Lookup (NANP)</h2>
+  <h2 id="s-area-code-lookup-nanp">Area Code Lookup (NANP)</h2>
   <div class="rig">
     <label class="lb">Search (area code or region name)</label>
     <input id="ac-q" placeholder="e.g. 305, Ontario" oninput="acRun()">
@@ -841,7 +841,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="tw"><table id="ac-tbl"><tr><th>Area code</th><th>Region</th></tr></table></div>
   </div>
 
-  <h2>Household Chemical Safety</h2>
+  <h2 id="s-household-chemical-safety">Household Chemical Safety</h2>
   <div class="rig">
     <p class="lead">A fixed reference over 8 common household products - the same "never mix" warnings printed on
     product labels and published by poison-control services. This is a closed lookup, not a general chemical
@@ -860,12 +860,12 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= SCIENCE ================= -->
 <div class="page" id="page-science">
-  <h1>SCIENCE BENCH</h1>
+  <h1 id="s-science-bench">SCIENCE BENCH</h1>
   <p class="lead">Standard chemistry and biology curriculum tools - atomic bonding, cell structure, protein chains,
   and DNA base-pairing. All computed from real reference data (Pauling electronegativity, standard amino acid
   codes, Watson-Crick base pairing), not decorative.</p>
 
-  <h2>Atom Bonding</h2>
+  <h2 id="s-atom-bonding">Atom Bonding</h2>
   <div class="rig">
     <p class="lead">Bond type is determined from the real electronegativity difference between the two elements
     (Pauling scale): over 1.7 is ionic, under that is covalent. Ionic formulas are balanced from real valence
@@ -889,7 +889,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="ab-out"></div>
   </div>
 
-  <h2>Cell Builder</h2>
+  <h2 id="s-cell-builder">Cell Builder</h2>
   <div class="rig">
     <p class="lead">Toggle animal or plant, then add organelles one at a time. Plant-only and animal-only
     organelles are filtered automatically - a plant cell view will not offer a centriole, an animal view will not
@@ -904,7 +904,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="cb-out"></div>
   </div>
 
-  <h2>Protein / Peptide Bond Builder</h2>
+  <h2 id="s-protein-peptide-bond-builder">Protein / Peptide Bond Builder</h2>
   <div class="rig">
     <p class="lead">Enter a sequence of standard single-letter amino acid codes. Each bond between amino acids is a
     real peptide bond, formed by dehydration synthesis (releasing one water molecule per bond).</p>
@@ -916,7 +916,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <div class="out" id="pt-out"></div>
   </div>
 
-  <h2>DNA Base-Pairing Builder</h2>
+  <h2 id="s-dna-base-pairing-builder">DNA Base-Pairing Builder</h2>
   <div class="rig">
     <p class="lead">Enter a sequence of A, T, C, G. The complementary strand is generated from real Watson-Crick
     base-pairing rules (A pairs with T, G pairs with C), plus GC content and a short-sequence melting-temperature
@@ -932,7 +932,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= AUDIT ================= -->
 <div class="page" id="page-audit">
-  <h1>LOGIC AUDIT</h1>
+  <h1 id="s-logic-audit">LOGIC AUDIT</h1>
   <p class="lead">Every HUB item was checked before it earned a place on this bench. Three verdicts: <span class="pill ok">tool</span>
   means it takes input and computes output, so it was ported and re-verified here. <span class="pill hz">content</span> means it
   is an archive or reading surface with no computation, so it stays in HUB and is not duplicated here.
@@ -943,7 +943,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
     <tr><th>HUB item</th><th>Verdict</th><th>Finding</th></tr>
   </table></div>
 
-  <h2>Ported Tool Verification</h2>
+  <h2 id="s-ported-tool-verification">Ported Tool Verification</h2>
   <div class="rig">
     <p class="lead">Self-test runs the pure functions on this page against known-answer vectors. It is the same check that
     must pass before any delivery.</p>
@@ -954,7 +954,7 @@ footer{border-top:1px solid var(--line);margin-top:46px;padding:20px 0 0;color:v
 
 <!-- ================= ECOSYSTEM ================= -->
 <div class="page" id="page-eco">
-  <h1>ECOSYSTEM AUDIT</h1>
+  <h1 id="s-ecosystem-audit">ECOSYSTEM AUDIT</h1>
   <p class="lead">Every live AVIDAA repo, pulled and read directly from source on 2026-07-25. "AI mentions" counts the
   literal word "AI" anywhere on the page. "Live API calls" counts real Anthropic API references (ARCH AI, MARCUS,
   PING AI and similar) &mdash; these are pages with an actual key-driven AI feature, not just the word appearing in
@@ -3489,7 +3489,7 @@ if(document.readyState==='complete')start();else addEventListener('load',start);
 addEventListener('resize',sched);})();</script><script id="av-shell-20261124">/* AVIDAA shell: shared header (or floating pill) + footer with the "Last updated" stamp. No outside calls, no tracking.
    Template tokens are replaced when a page is built: Tools --av-tools Tools 2026-11-24 06:37 */
 (function(){
-  var NAME='Tools',SECTOR='--av-tools',STAMP='2026-11-25 15:20',HOME='https://avidaa1.github.io/';
+  var NAME='Tools',SECTOR='--av-tools',STAMP='2026-11-25 15:34',HOME='https://avidaa1.github.io/';
   var ARROW='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   function build(){
     if(!document.body||document.querySelector('.av-footer'))return;
