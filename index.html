@@ -5,7 +5,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2316181c'/%3E%3Cpath d='M9 22l9-9M7 20a3 3 0 004 4l10-10 1-6-6 1L6 19z' stroke='%23ffc400' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='23' cy='9' r='2' fill='%23ff6b2c'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#050818">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.coingecko.com https://api.frankfurter.app; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.coingecko.com https://api.frankfurter.dev; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="AVIDAA TOOLS — one machined bench holding every AVIDAA utility. Cipher, vault, hash, sound lab, converters, text engines, calculators, physics explorers. Offline, no accounts, no keys.">
 <title>AVIDAA TOOLS &middot; The Bench</title>
@@ -3093,7 +3093,7 @@ function ccPopulate(list){
 }
 function ccInit(){
   ccPopulate(CURR_FALLBACK);
-  fetch('https://api.frankfurter.app/currencies').then(function(r){
+  fetch('https://api.frankfurter.dev/v1/currencies').then(function(r){
     if(!r.ok)throw 0;return r.json();
   }).then(function(d){
     var list=[],k;
@@ -3109,7 +3109,7 @@ function ccRun(){
   if(isNaN(amt)){setOut('cc-out','Enter an amount.','err');return;}
   if(from===to){setOut('cc-out',amt+' '+from+' = '+amt+' '+to+' (same currency)');return;}
   setOut('cc-out','fetching live rate...','warn');
-  fetch('https://api.frankfurter.app/latest?amount='+encodeURIComponent(amt)+'&from='+from+'&to='+to)
+  fetch('https://api.frankfurter.dev/v1/latest?amount='+encodeURIComponent(amt)+'&from='+from+'&to='+to)
     .then(function(r){if(!r.ok)throw 0;return r.json();})
     .then(function(d){
       var v=d.rates[to];
@@ -3481,7 +3481,7 @@ if(document.readyState==='complete')start();else addEventListener('load',start);
 addEventListener('resize',sched);})();</script><script id="av-shell-20261124">/* AVIDAA shell: shared header (or floating pill) + footer with the "Last updated" stamp. No outside calls, no tracking.
    Template tokens are replaced when a page is built: Tools --av-tools Tools 2026-11-24 06:37 */
 (function(){
-  var NAME='Tools',SECTOR='--av-tools',STAMP='2026-11-25 16:49',HOME='https://avidaa1.github.io/';
+  var NAME='Tools',SECTOR='--av-tools',STAMP='2026-11-25 18:04',HOME='https://avidaa1.github.io/';
   var ARROW='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   function build(){
     if(!document.body||document.querySelector('.av-footer'))return;
